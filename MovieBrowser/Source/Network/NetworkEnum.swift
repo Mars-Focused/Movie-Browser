@@ -8,6 +8,10 @@
 
 import Foundation
 
+/// holds the pieces of our acceptable API calls
+/// sets it to an enum type
+/// an enum is like a switch statement in javascript
+
 enum AppSecrets: String {
     case APIKey = "5885c445eab51c7004916b9c0313e2d3"
 }

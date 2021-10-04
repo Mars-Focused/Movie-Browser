@@ -8,19 +8,27 @@
 
 import UIKit
 
+/// Holds the data for a Movie model and instructs the view to conform to it.
+
 class DetailsViewModel {
     
     var movie: Movie
     var network: NetworkServiceProtocol
+    
+    /// instantiates a movie with a movie and network
     
     init(movie: Movie) {
         self.movie = movie
         self.network = NetworkService()
     }
     
+    /// fetches the image from the network
+    
     func fetchImage(imageStr: String ,completion: @escaping (UIImage?) -> Void) {
         network.fetchImage(imageStr: imageStr, completion: completion)
     }
+    
+    /// sets these variables to their value within the Movie model
     
     var movieTitle: String {
         movie.original_title ?? "Placeholder Title"

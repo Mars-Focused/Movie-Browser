@@ -8,12 +8,16 @@
 
 import UIKit
 
+/// fetches the data from our API's and Images depending on the case
+
+/// sets the outline or blueprint for our network service class
 protocol NetworkServiceProtocol {
     func fetchMovies(query: String, completion: @escaping ([Movie]) -> Void)
     
     func fetchImage(imageStr: String, completion: @escaping (UIImage?) -> Void)
 }
 
+/// contains the functions that call the API weather image or JSON object
 class NetworkService: NetworkServiceProtocol {
     
     func fetchMovies(query: String, completion: @escaping ([Movie]) -> Void) {

@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class SearchViewController: UIViewController {
     
     @IBAction func SearchButton(_ sender: Any) {
@@ -18,7 +19,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var MovieListTableView: UITableView!
     
     var input: String {
-        return SearchBar.text ?? ""
+        return SearchBar.text ?? "" // what to do for empy string
     }
     
     

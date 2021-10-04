@@ -8,8 +8,13 @@
 
 import Foundation
 
+/// builds a request that we can use to call the api or images
+
 struct URLRequestBuilder {
     static func buildRequest(path: Paths, method: HTTPMethods, queryItems: [URLQueryItem]? = nil, body: [String: AnyHashable]? = nil) -> URLRequest {
+        
+        /// combines all our ingredients together.
+        
         let defaultQueryItems: [URLQueryItem] = [
             .init(name: "api_key", value: AppSecrets.APIKey.rawValue),
             .init(name: "language", value: "en"),
@@ -27,5 +32,4 @@ struct URLRequestBuilder {
         req.httpMethod = method.rawValue
         return req
     }
-    
 }

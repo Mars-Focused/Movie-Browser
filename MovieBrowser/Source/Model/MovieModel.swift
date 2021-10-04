@@ -6,6 +6,8 @@
 //  Copyright © 2021 Lowe's Home Improvement. All rights reserved.
 //
 
+/// we create a structure of movie to make our app a) easier to read and b) to easily connect to the JSON object
+
 import Foundation
 
 struct Movielist: Decodable {

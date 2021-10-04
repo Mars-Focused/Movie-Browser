@@ -8,6 +8,8 @@
 
 import UIKit
 
+/// displays the cell
+
 class TableViewCell: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
@@ -16,9 +18,19 @@ class TableViewCell: UITableViewCell {
     
     var movie: Movie?
     
+    /// sets all the text within the cell to the values within our model.
+    
     func updateLabels() {
-        title.text = movie?.original_title
-        releaseDate.text = movie?.release_date
-        rating.text = String(movie!.vote_average!)
+        
+        /// IMPROVEMENT unwrap this first
+        guard let movie = movie else {
+            return
+        }
+        
+        title.text = movie.original_title
+        releaseDate.text = movie.release_date
+        
+        /// IMPROVEMENT nil Coaless the vote_average
+        rating.text = String(movie.vote_average ?? 0)
     }
 }
